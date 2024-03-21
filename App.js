@@ -5,13 +5,14 @@ import {
 } from "react-native";
 
 import Bottom_stack_top from './Navigation/Bottom_stack_top';
+import Internee from './Navigation/Internee';
 
 
 function App() {
   return (
     <View style={styles.container} >
-      <Bottom_stack_top></Bottom_stack_top>
-      </View>
+      <Internee/>
+            </View>
     
   );
 }
