@@ -66,6 +66,7 @@ const InternList = () => {
             </Text>
             <Browseinternship/>
             <Reviewfooter/>
+            
             </ScrollView>
         </View>
 

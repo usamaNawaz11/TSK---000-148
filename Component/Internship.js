@@ -10,6 +10,8 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
+import { useDispatch, useSelector } from "react-redux";
+import { addCourse } from "../Reduxtoolkit/Courseslice";
 const Internship=()=>{
     
 const intern = [
@@ -78,7 +80,14 @@ const intern = [
     },
 
 ]
+const dispatch = useDispatch();
+const add=useSelector(state=>state);
+console.log(add)
 const internshipItem = ({ item }) => {
+    const handleAddCourse = () => {
+        dispatch(addCourse(item));
+    };
+
     return (
         <View style={styles.internShip}>
             <Image source={item.image} style={styles.internshipBox} />
@@ -91,13 +100,14 @@ const internshipItem = ({ item }) => {
                     <Text style={{ marginTop: responsiveHeight(0.6), fontWeight: "200", marginLeft: responsiveHeight(1) }}>{item.duration}</Text>
                 </View>
                 <View style={styles.lineView} />
-                <TouchableOpacity style={styles.applyNow}>
-                    <Text style={{ color: "white" }}>Apply now</Text>
+                <TouchableOpacity onPress={handleAddCourse} style={styles.applyNow}>
+                    <Text style={{ color: "white" }}>Add to cart</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
+
     return(
         <View style={styles.container}>
             <FlatList

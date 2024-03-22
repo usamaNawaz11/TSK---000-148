@@ -9,6 +9,7 @@ import InternList from "../Screen/InternList";
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Userdata from '../Screen/Userdata';
+import Cart from '../Screen/Cart';
 export default function Internee() {
   const Stack = createStackNavigator();
   
@@ -30,6 +31,7 @@ const HomeDrawer = () => {
       <Drawer.Screen name="about" component={About} />
       <Drawer.Screen name="intern" component={InternList} />
       <Drawer.Screen name="Users" component={Userdata} />
+      <Drawer.Screen name="Cart" component={Cart} />
 
     </Drawer.Navigator>
   );
